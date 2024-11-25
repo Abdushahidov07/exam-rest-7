@@ -71,9 +71,10 @@ def save_students_notcome(message, prichina):
             %s
         )
     """
-    cur.execute(query, (message.chat.id, prichina, datetime.now(), False, datetime.now()), True)
+    cur.execute(query, (message.chat.id, prichina, datetime.now(), False, datetime.now(), True)) 
     conn.commit()
     close_connection(conn, cur)
+
 
 def save_students_come2(message, username):
     conn = open_connection()

@@ -4,7 +4,7 @@ from .models import *
 class AttendensSerializers(serializers.ModelSerializer):
     class Meta:
         model = Attendens
-        fields = ['id','prichina', 'attended_time', 'missed_time', 'timeout_time', 'omad', 'raft', 'created_at', 'is_active']
+        fields = ['id','prichina', 'attended_time', 'missed_time', 'timeout_time', 'omad', 'raft', 'created_at', 'is_active', "user"]
 
 class UsersSerializers(serializers.ModelSerializer):
     attendens = AttendensSerializers(many=True, read_only=True) 
